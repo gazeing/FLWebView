@@ -27,6 +27,7 @@
     // If it is present, create a WKWebView. If not, create a UIWebView.
     if (NSClassFromString(@"WKWebView")) {
         _webView = [[WKWebView alloc] initWithFrame: [[self view] bounds]];
+        ((WKWebView *)_webView).allowsBackForwardNavigationGestures = YES;
     } else {
         _webView = [[UIWebView alloc] initWithFrame: [[self view] bounds]];
     }
@@ -43,7 +44,7 @@
     [[self view]    setAutoresizingMask: UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
     
     // Just to show *something* on load, we go to our favorite site.
-    [[self webView] loadRequestFromString:@"http://www.floatlearning.com/"];
+    [[self webView] loadRequestFromString:@"http://www.rpmonline.com.au/"];
 }
 
 /*
